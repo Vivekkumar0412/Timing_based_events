@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>timing based events</title>
     <style>
-        *{
+        * {
             background-color: black;
             color: orange;
-        }button{
+        }
+
+        button {
             border: 2px solid white;
             font-size: 40px;
             text-align: center;
             margin-left: 670px;
             cursor: pointer;
-        }h1,h2{
+        }
+
+        h1,
+        h2 {
             text-align: center;
-        }#tm{
+        }
+
+        #tm {
             text-align: center;
             font-size: 100px;
         }
     </style>
 </head>
+
 <body>
     <h1>Want to know my name...?</h1>
     <h2 id="myName"></h2>
@@ -46,35 +55,36 @@
         let star = document.getElementById("start");
         let stopp = document.getElementById("stopp");
 
-        stopp.addEventListener('click',function(){
+        stopp.addEventListener('click', function () {
             clearInterval(inter);
         });
-        function startTime(){
-          inter =  setInterval(()=>{
+        
+        star.addEventListener('click',function(){
+            inter = setInterval(()=>{
                 tm.innerHTML = count;
                 count++;
-            },1000);
-        }
-        star.addEventListener("click",startTime());
+            },1000)
+        })
 
 
 
 
         let n = new Date();
 
-        function stop(){
+        function stop() {
             clearTimeout(h);
         };
         n = n.toLocaleString();
-        const callname = ()=>{
+        const callname = () => {
             myName.innerHTML = "Hi my name is Vivek kumar";
         }
-        btn.addEventListener('click',()=>{
+        btn.addEventListener('click', () => {
             myName.innerHTML = "Loading....";
-            
+
             tim.innerHTML = n.value;
-            let h = setTimeout(callname,4000);
+            let h = setTimeout(callname, 4000);
         });
     </script>
 </body>
+
 </html>
