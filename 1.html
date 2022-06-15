@@ -14,8 +14,12 @@
             font-size: 40px;
             text-align: center;
             margin-left: 670px;
+            cursor: pointer;
         }h1,h2{
             text-align: center;
+        }#tm{
+            text-align: center;
+            font-size: 100px;
         }
     </style>
 </head>
@@ -33,7 +37,22 @@
         let btn = document.getElementById("btn");
         let myName = document.getElementById("myName");
         let tim = document.getElementById("tim");
+        let tm = document.getElementById("tm");
         let btn2 = document.getElementById("btn2");
+        let count = 0;
+
+        let star = document.getElementById("start");
+        function startTime(){
+            setInterval(()=>{
+                tm.innerHTML = count;
+                count++;
+            },1000);
+        }
+        star.addEventListener("click",startTime());
+
+
+
+
         let n = new Date();
 
         function stop(){
