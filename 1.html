@@ -31,6 +31,7 @@
     <button id="btn2" onclick="stop()">Click to Stop!</button>
     <div id="tim"></div>
     <button id="start">start</button>
+    <button id="stopp">stop</button>
     <div id="tm"></div>
 
     <script>
@@ -40,10 +41,16 @@
         let tm = document.getElementById("tm");
         let btn2 = document.getElementById("btn2");
         let count = 0;
+        let inter;
 
         let star = document.getElementById("start");
+        let stopp = document.getElementById("stopp");
+
+        stopp.addEventListener('click',function(){
+            clearInterval(inter);
+        });
         function startTime(){
-            setInterval(()=>{
+          inter =  setInterval(()=>{
                 tm.innerHTML = count;
                 count++;
             },1000);
