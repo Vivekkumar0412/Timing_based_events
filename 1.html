@@ -24,16 +24,30 @@
     <h2 id="myName"></h2>
     <br>
     <button id="btn">Click Me!</button>
+    <button id="btn2" onclick="stop()">Click to Stop!</button>
+    <div id="tim"></div>
+    <button id="start">start</button>
+    <div id="tm"></div>
 
     <script>
         let btn = document.getElementById("btn");
         let myName = document.getElementById("myName");
+        let tim = document.getElementById("tim");
+        let btn2 = document.getElementById("btn2");
+        let n = new Date();
+
+        function stop(){
+            clearTimeout(h);
+        };
+        n = n.toLocaleString();
         const callname = ()=>{
             myName.innerHTML = "Hi my name is Vivek kumar";
         }
         btn.addEventListener('click',()=>{
             myName.innerHTML = "Loading....";
-            setTimeout(callname,1000);
+            
+            tim.innerHTML = n.value;
+            let h = setTimeout(callname,4000);
         });
     </script>
 </body>
